@@ -1,0 +1,7 @@
+agent.name
+
+#spring.rabbitmq.host=localhost
+#spring.rabbitmq.port=-1
+#spring.rabbitmq.username=
+#spring.rabbitmq.password=
+

@@ -1,0 +1,35 @@
+def springVersion = '4.3.12.RELEASE'
+def jacksonVersion = '2.9.2'
+
+group 'com.artmark'
+version '2.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'war'
+
+sourceCompatibility = 1.7
+
+repositories {
+    mavenCentral()
+}
+
+war {
+    manifest {
+        attributes Version: version
+        attributes Artifact: project.name
+    }
+}
+
+dependencies {
+    compile "org.springframework:spring-beans:$springVersion"
+    compile "org.springframework:spring-webmvc:$springVersion"
+    compile "com.fasterxml.jackson.core:jackson-core:$jacksonVersion"
+    compile "com.fasterxml.jackson.core:jackson-databind:$jacksonVersion"
+    compile "org.springframework.amqp:spring-rabbit:1.7.4.RELEASE"
+    compile 'org.slf4j:slf4j-log4j12:1.7.13'
+    compile "javax.servlet:javax.servlet-api:3.1.0"
+    compile 'com.google.guava:guava:24.1-jre'
+
+    testCompile 'junit:junit:4.11'
+}
+
