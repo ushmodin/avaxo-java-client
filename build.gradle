@@ -18,6 +18,7 @@ war {
         attributes Version: version
         attributes Artifact: project.name
     }
+    archiveName = 'avaxo-client.war'
 }
 
 dependencies {
