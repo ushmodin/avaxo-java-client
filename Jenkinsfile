@@ -3,5 +3,7 @@ node {
     docker.image('openjdk:8').withRun('-v /var/jenkins_home/.gradle:/root/.gradle') { c->
         sh './gradlew clean build'
     }
-    docker.build('avaxo-client')
+    docker.withRegistry('http://192.168.1.240:8082') {
+        docker.build('avaxo-client')
+    }
 }
